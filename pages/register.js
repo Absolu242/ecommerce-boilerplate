@@ -4,13 +4,15 @@ import Link from "next/link"
 import valid from "../utils/valid"
 import { DataContext } from "../store/GlobalState"
 import { postData } from "../store/fetchData"
+import { useRouter } from "next/router"
 
 export default function register() {
   const initialState = { name: "", email: "", password: "", cf_password: "" }
   const [userData, setUserData] = useState(initialState)
   const { name, email, password, cf_password } = userData
-
+  const router = useRouter()
   const [state, dispatch] = useContext(DataContext)
+  const { auth } = state
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target
@@ -32,6 +34,10 @@ export default function register() {
 
     return dispatch({ type: "NOTIFY", payload: { success: res.msg } })
   }
+
+  useEffect(() => {
+    if (Object.keys(auth).length !== 0) router.push("/")
+  }, [auth])
 
   return (
     <div>
