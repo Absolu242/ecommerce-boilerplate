@@ -6,5 +6,9 @@ module.exports = {
     ACCESS_TOKEN_SECRET: "/w]tPWDhb,]-D^Bx-azaVJ$hNT_Qq&-Zu^7F]@#YF7s+-WF",
     REFRESH_TOKEN_ACCESS:
       "Hg>8=BV5dL3&rQxsh)dn>P{N4;+{d)w)3CWX>+rVr@WeA!w]6z?fUCu%,6,_EsUQ*(G:Cd6fps=4bH:s4k}H^,x3",
+    PAYPAL_CLIENT_ID: "",
+    CLOUD_UPDATE_PRESET: "YOUR_CLOUD_UPDATE_PRESET",
+    CLOUD_NAME: "YOUR_CLOUD_NAME",
+    CLOUD_API: "YOUR_CLOUD_API",
   },
 }
