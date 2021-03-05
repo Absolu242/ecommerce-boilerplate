@@ -1,36 +1,34 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
-const userSchema = new mongoose.Schema(
-  {
+const userSchema = new mongoose.Schema({
     name: {
-      type: String,
-      reauired: true,
+        type: String,
+        required: true
     },
     email: {
-      type: String,
-      reauired: true,
+        type: String,
+        required: true,
+        unique: true
     },
     password: {
-      type: String,
-      reauired: true,
+        type: String,
+        required: true
     },
     role: {
-      type: String,
-      default: "user",
+        type: String,
+        default: 'user'
     },
     root: {
-      type: Boolean,
-      reauired: false,
+        type: Boolean,
+        default: false
     },
     avatar: {
-      type: String,
-      default: "",
-    },
-  },
-  {
-    timeStanps: true,
-  }
-)
+        type: String,
+        default: 'https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png'
+    }
+}, {
+    timestamps: true
+})
 
-let DataSet = mongoose.models.user || mongoose.model("user", userSchema)
-export default DataSet
+let Dataset = mongoose.models.user || mongoose.model('user', userSchema)
+export default Dataset
